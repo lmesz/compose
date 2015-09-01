@@ -23,3 +23,9 @@ class Formatter(object):
         table.set_chars(['-', '|', '+', '-'])
 
         return table.draw()
+
+    def csv(self, headers, rows):
+        rows_in_csv = "%s" % ";".join(headers)
+        for row in rows:
+            rows_in_csv = rows_in_csv + "\n" + ";".join(row)
+        return rows_in_csv
